@@ -77,6 +77,11 @@ h2 {
     margin: 0 34px;
 }
 
+.hero {
+	position: relative;
+	z-index: 9999;
+}
+
 .sub-title {
 	font-size: 28px;
 	margin-top: 5px;
@@ -86,6 +91,8 @@ h2 {
 	border-radius: 10px;
 	display: inline-block;
 	color: #ffffff;
+	position: relative;
+	z-index: 9999;
 }
 
 
@@ -118,6 +125,10 @@ h2 {
 }
 
 .layer { position: absolute; }
+
+.layer[data-depth="0.30"] {
+	z-index: 9999 !important;
+}
 
 .layer div {
   -webkit-transform: translate3d(0,0,0);
@@ -321,20 +332,46 @@ h2 {
 /* =Responsive Styles
 -------------------------------------------------------------- */
 
+/* Mobile First - Default mobile styles */
+@media (max-width: 767px) {
+	/* HERO */
+	h1 { font-size: 36px; line-height: 38px; }
+	h2 { font-size: 14px; }
+	#countdown div span {font-size: 20px; line-height: 24px;}
+	#countdown div { margin: 0 10px; }
+	.sub-title { 
+		font-size: 14px; 
+		line-height: 18px; 
+		margin-top: 10px;
+		padding: 15px 20px;
+	}
+	/* TITLE & CONTACT */
+	.title { top: 10%;}
+	.contact { font-size: 12px; }
+	.contact .icons { margin-bottom: 8px; }
+	.contact .icons li a { font-size: 20px; }
+	.contact a.mail { font-size: 12px; }
+}
+
 @media (max-width: 320px) {
 	/* HERO */
-	h1 { font-size: 40px; line-height: 40px; }
-	#countdown div span {font-size: 24px; line-height: 34px;}
-	.sub-title { font-size: ; line-height: ; margin-top: 10px; }
+	h1 { font-size: 32px; line-height: 34px; }
+	h2 { font-size: 12px; }
+	#countdown div span {font-size: 18px; line-height: 22px;}
+	#countdown div { margin: 0 8px; }
+	.sub-title { font-size: 12px; line-height: 16px; margin-top: 8px; padding: 12px 15px; }
 	/* TITLE & CONTACT */
 	.title { top: 15%;}
+	.contact { font-size: 11px; }
 	.contact .icons { margin-bottom: 0px; }
+	.contact .icons li a { font-size: 18px; }
+	.contact a.mail { font-size: 11px; }
 	/* SIZES */
 	.sphere img{
-		-webkit-transform: scale(0.6);
-		-moz-transform: scale(0.6);
-		-ms-transform: scale(0.6,0.6);
-		transform: scale(0.6);
+		-webkit-transform: scale(0.5);
+		-moz-transform: scale(0.5);
+		-ms-transform: scale(0.5,0.5);
+		transform: scale(0.5);
 	}
 	/* POSITIONING */
 	.depth-5 {
@@ -399,11 +436,13 @@ h2 {
 
 
 /* Landscape Phone */
-@media all and (min-width: 400px) {
+@media all and (min-width: 400px) and (max-width: 699px) {
 	/* HERO */
-	h1 { font-size: 40px; line-height: 40px; }
-	#countdown div span {font-size: 24px; line-height: 34px;}
-	.sub-title { font-size: ; line-height: ; margin-top: 10px; }
+	h1 { font-size: 44px; line-height: 46px; }
+	h2 { font-size: 15px; }
+	#countdown div span {font-size: 22px; line-height: 26px;}
+	#countdown div { margin: 0 12px; }
+	.sub-title { font-size: 16px; line-height: 20px; margin-top: 10px; padding: 15px 25px; }
 	/* TITLE & CONTACT */
 	.title { top: 15%;}
 	.contact .icons { margin-bottom: 0px; }
